@@ -15,13 +15,13 @@ Console.Write("Введите колличество столбцов масси
 int columns = int.Parse(Console.ReadLine());
 
 int[,] array = GetArray(rows, columns, 0, 10);
-PrintArray(array);
+PrintArray(array); // вызов метода который выводдит в консоль массив
 
 Console.WriteLine($"Отсартированный массив: ");
-ChengArr(array);
-PrintArray(array);
+ChengArr(array); // вызов метода который отсортирует по убыванию строки массива
+PrintArray(array); // вызов метода который выводдит в консоль массив (уже отсортированный)
 
-int[,] GetArray(int m, int n, int min, int max)
+int[,] GetArray(int m, int n, int min, int max) // метод который создаст массив из рандомных чисел
 {
     int[,] result = new int[m, n];
     for (int i = 0; i < m; i++)
@@ -34,7 +34,7 @@ int[,] GetArray(int m, int n, int min, int max)
     return result;
 }
 
-void PrintArray(int[,] inArray)
+void PrintArray(int[,] inArray)  // метод который выводит массив в консоль
 {
     for (int i = 0; i < inArray.GetLength(0); i++)
     {
@@ -46,7 +46,7 @@ void PrintArray(int[,] inArray)
     }
 }
 
-void ChengArr(int[,] inArray)
+void ChengArr(int[,] inArray) //метод который отсортирует по убыванию строки массива
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {

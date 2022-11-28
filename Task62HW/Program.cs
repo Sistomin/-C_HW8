@@ -5,14 +5,14 @@
 // 11 16 15 06
 // 10 09 08 07
 
-int n = 4;
-int[,] sqareMatrix = new int[n, n];
+int n = 4; // задаем значение для кол-ва строк и столбцов
+int[,] sqareMatrix = new int[n, n]; // объявляем массив
 
-int temp = 1;
+int temp = 1; // объявляем переменные
 int i = 0;
 int j = 0;
 
-while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1)) //заполняем спирально массив
 {
   sqareMatrix[i, j] = temp;
   temp++;
@@ -26,9 +26,9 @@ while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
     i--;
 }
 
-WriteArray(sqareMatrix);
+WriteArray(sqareMatrix); // вызов метода для вывода в консоль массива
 
-void WriteArray (int[,] array)
+void WriteArray (int[,] array) // метод для вывода в консоль массива
 {
   for (int i = 0; i < array.GetLength(0); i++)
   {

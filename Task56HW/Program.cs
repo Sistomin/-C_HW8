@@ -12,13 +12,13 @@ int rows = int.Parse(Console.ReadLine());
 Console.Write("Введите колличество столбцов массива: ");
 int columns = int.Parse(Console.ReadLine());
 
-int[,] array = GetArray(rows, columns, 0, 10);
-PrintArray(array);
+int[,] array = GetArray(rows, columns, 0, 10); // объявляем массив
+PrintArray(array); // выводим на экран полученный массив
 
 Console.WriteLine($" ");
-FindMinSumInRow(array);
+FindMinSumInRow(array); // вызываем метод нахождения минимального зачения суммы по строкам массива
 
-int[,] GetArray(int m, int n, int min, int max)
+int[,] GetArray(int m, int n, int min, int max) // метод создания массива заполненого рандомными значениями
 {
     int[,] result = new int[m, n];
     for (int i = 0; i < m; i++)
@@ -31,7 +31,7 @@ int[,] GetArray(int m, int n, int min, int max)
     return result;
 }
 
-void PrintArray(int[,] inArray)
+void PrintArray(int[,] inArray) // метод вывода в консоль массива
 {
     for (int i = 0; i < inArray.GetLength(0); i++)
     {
@@ -43,7 +43,7 @@ void PrintArray(int[,] inArray)
     }
 }
 
-int SumRowArr(int[,] inArray, int i)
+int SumRowArr(int[,] inArray, int i) // метод суммирования значений одной строки массива
 {
     int sumLine = array[i, 0];
     for (int j = 0; j < array.GetLength(1); j++)
@@ -53,7 +53,7 @@ int SumRowArr(int[,] inArray, int i)
     return sumLine;
 }
 
-void FindMinSumInRow(int[,] inArray)
+void FindMinSumInRow(int[,] inArray) // метод нахождения минимального зачения суммы по строкам массива
 {
     int minSumLine = 0;
     int sumLine = SumRowArr(array, 0);

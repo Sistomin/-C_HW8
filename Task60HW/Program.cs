@@ -7,23 +7,23 @@
 // 26(1,0,1) 55(1,1,1)
 
 Console.WriteLine($"\nВведите размер массива X x Y x Z:");
-int x = InputNumbers("Введите X: ");
-int y = InputNumbers("Введите Y: ");
-int z = InputNumbers("Введите Z: ");
+int x = InputNumbers("Введите X: "); // выхов метода ввода чисел
+int y = InputNumbers("Введите Y: "); // выхов метода ввода чисел
+int z = InputNumbers("Введите Z: "); // выхов метода ввода чисел
 Console.WriteLine($"");
 
-int[,,] array3D = new int[x, y, z];
-CreateArray(array3D);
-WriteArray(array3D);
+int[,,] array3D = new int[x, y, z]; // объявление 3мерного массива
+CreateArray(array3D); // вызов метода создания массива
+WriteArray(array3D); //вызов метода вывода в консоль массива
 
-int InputNumbers(string input)
+int InputNumbers(string input) // метод ввода чисел пользователем с консоли
 {
   Console.Write(input);
   int output = Convert.ToInt32(Console.ReadLine());
   return output;
 }
 
-void WriteArray (int[,,] array3D)
+void WriteArray (int[,,] array3D) // метод вывода в консоль массива
 {
   for (int i = 0; i < array3D.GetLength(0); i++)
   {
@@ -40,7 +40,7 @@ void WriteArray (int[,,] array3D)
   }
 }
 
-void CreateArray(int[,,] array3D)
+void CreateArray(int[,,] array3D)  // метод создания 3мерного массива
 {
   int[] temp = new int[array3D.GetLength(0) * array3D.GetLength(1) * array3D.GetLength(2)];
   int  number;
